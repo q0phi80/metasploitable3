@@ -13,7 +13,23 @@ Vagrant.configure("2") do |config|
 
     ub1404.vm.provider "virtualbox" do |v|
       v.name = "Metasploitable3-ub1404"
+      v.memory = 1024
+    end
+  end
+  
+  config.vm.define "Kali" do |kali|
+    kali.vm.box = "kalilinux/rolling"
+    kali.vm.hostname = "Kali"
+	
+	kali.vm.disk :disk, size: "50B", primary: true
+	
+	# kali.vm.network "private_network", ip: '172.28.128.4'
+		# auto_config: false
+    
+    kali.vm.provider "virtualbox" do |v|
+      v.name = "Kali"
       v.memory = 2048
+	  v.cpus = 2
     end
   end
 
@@ -25,7 +41,7 @@ Vagrant.configure("2") do |config|
     win2k8.winrm.retry_limit = 60
     win2k8.winrm.retry_delay = 10
 
-    win2k8.vm.network "private_network", type: "dhcp"
+    win2k8.vm.network "private_network", ip: '172.28.128.5'
 
     win2k8.vm.provider "libvirt" do |v|
       v.memory = 4096
