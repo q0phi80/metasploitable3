@@ -31,19 +31,18 @@ config.vm.define "Kali" do |kali|
     end
   end
 
-  config.vm.define "win2k8" do |win2k8|
+config.vm.define "win2k8" do |win2k8|
     # Base configuration for the VM and provisioner
     win2k8.vm.box = "rapid7/metasploitable3-win2k8"
-    win2k8.vm.hostname = "DC01"
+    win2k8.vm.hostname = "metasploitable3-win2k8"
     win2k8.vm.communicator = "winrm"
     win2k8.winrm.retry_limit = 60
     win2k8.winrm.retry_delay = 10
 
-    win2k8.vm.network "private_network", ip: '172.28.128.10'
+    win2k8.vm.network "private_network", type: "dhcp"
 
     win2k8.vm.provider "libvirt" do |v|
-      v.name = "DC01
-      v.memory = 2048
+      v.memory = 4096
       v.cpus = 2
       v.video_type = 'qxl'
       v.input :type => "tablet", :bus => "usb"
