@@ -58,7 +58,7 @@ config.vm.define "win2k8" do |win2k8|
     win2k8.winrm.retry_limit = 60
     win2k8.winrm.retry_delay = 10
 
-    win2k8.vm.network "private_network", type: "dhcp"
+    win2k8.vm.network "private_network", ip: '172.28.128.10'
   
     win2k8.vm.provider "virtualbox" do |v|
       v.name = "Win2k8"
