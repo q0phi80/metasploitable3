@@ -5,7 +5,7 @@ Vagrant.configure("2") do |config|
   config.vm.synced_folder '.', '/vagrant', disabled: true
   config.vm.define "ub1404" do |ub1404|
     ub1404.vm.box = "rapid7/metasploitable3-ub1404"
-    ub1404.vm.hostname = "metasploitable3-ub1404"
+    ub1404.vm.hostname = "meta"
     config.ssh.username = 'vagrant'
     config.ssh.password = 'vagrant'
 
