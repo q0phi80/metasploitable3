@@ -11,8 +11,8 @@ netsh advfirewall firewall add rule name="Open Port 8383 for ManageEngine Deskto
 netsh advfirewall firewall add rule name="Open Port 8022 for ManageEngine Desktop Central" dir=in action=allow protocol=TCP localport=8022
 netsh advfirewall firewall add rule name="Open Port 9200 for ElasticSearch" dir=in action=allow protocol=TCP localport=9200
 netsh advfirewall firewall add rule name="Open Port 161 for SNMP" dir=in action=allow protocol=UDP localport=161
-netsh advfirewall firewall add rule name="Closed port 445 for SMB" dir=in action=block protocol=TCP localport=445
-netsh advfirewall firewall add rule name="Closed port 139 for NetBIOS" dir=in action=block protocol=TCP localport=139
-netsh advfirewall firewall add rule name="Closed port 135 for NetBIOS" dir=in action=block protocol=TCP localport=135
-netsh advfirewall firewall add rule name="Closed Port 3389 for Remote Desktop" dir=in action=block protocol=TCP localport=3389
-netsh advfirewall firewall add rule name="Closed Port 3306 for MySQL" dir=in action=block protocol=TCP localport=3306
+netsh advfirewall firewall add rule name="Open port 445 for SMB" dir=in action=allow protocol=TCP localport=445
+netsh advfirewall firewall add rule name="Open port 139 for NetBIOS" dir=in action=allow protocol=TCP localport=139
+netsh advfirewall firewall add rule name="Open port 135 for NetBIOS" dir=in action=allow protocol=TCP localport=135
+netsh advfirewall firewall add rule name="Open Port 3389 for Remote Desktop" dir=in action=allow protocol=TCP localport=3389
+netsh advfirewall firewall add rule name="Open Port 3306 for MySQL" dir=in action=allow protocol=TCP localport=3306
